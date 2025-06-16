@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación</title>
+  <link rel="icon" href="image/ico.png" type="image/png">
+
+
+  <!-- Fonts y Estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #01428d;
+      font-family: 'DM Serif Text', sans-serif;
+      margin: 0;
+    }
+
+    .contenedor {
+      position: relative;
+    }
+
+    .superior {
+      position: absolute;
+      border-left: 180px solid transparent;
+      border-right: 180px solid transparent;
+      border-top: 120px solid #284ce9;
+      border-bottom: 120px solid transparent;
+      transition: transform 0.75s;
+      transform-origin: top;
+    }
+
+    .mensaje {
+      position: absolute;
+      padding: 1.5rem;
+      line-height: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      background: #eae2b7;
+      width: 360px;
+      height: 240px;
+      z-index: -1;
+      transition: transform 0.75s ease-in-out;
+    }
+
+    .mensaje:before {
+      content: "";
+      border-style: dotted;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 55px;
+    }
+
+    .p{
+       color: darkgoldenrod; 
+    }
+    
+
+    .mensaje p {
+      position: relative;
+      top: -10px;
+      font-size: 1.6rem;
+      color: darkgoldenrod;
+    }
+
+    .ubicacion-link {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #2a2963, #4099ff);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .ubicacion-link:hover {
+      background-position: 100% 100%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .carta {
+      border-left: 180px solid #4aace6;
+      border-right: 180px solid #61b0dd;
+      border-top: 120px solid transparent;
+      border-bottom: 120px solid #3b9dd6;
+    }
+
+    .bx {
+      position: absolute;
+      color: #030581;
+      top: 90px;
+      right: 155px;
+      font-size: 50px;
+      animation: palpitar 0.6s linear infinite;
+    }
+
+    .psorpresa {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22PX; 
+      margin-top: -30px;
+      color: darkgoldenrod;
+    }
+
+    .botones {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .boton {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #2a2963, #4099ff);
+      background-size: 200% 200%;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .boton:hover {
+      background-position: 100% 100%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .abrir-superior {
+      transform: rotateX(180deg);
+    }
+
+    .abrir-mensaje {
+      transform: translateY(-105px);
+    }
+
+    .bx-rotada {
+      color: #534770;
+      animation: none;
+    }
+
+    @keyframes palpitar {
+      0% {
+        transform: scale(1.07);
+      }
+
+      80% {
+        transform: scale(1.0);
+      }
+
+      100% {
+        transform: scale(1.08);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mensaje:before {
+        content: "";
+        border-style: dotted;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 45px;
+      }
+
+      .mensaje p {
+        position: relative;
+        top: -15px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2 style="font-family: 'Brush Script MT', cursive;
+      font-size: 32PX; 
+      color: darkgoldenrod;">❤️¡Feliz Día del Padre!❤️</h2>
+  <p class="psorpresa">Una pequeña sorpresa para ti...</p>
+
+  <div class="contenedor" id="AbrirContenedor">
+    <div class="superior"></div>
+    <div class="mensaje">
+      <p>Es para mi un placer invitarle a usted a celebrar un pequeño festejo<br> 
+      Hora: 4:00 PM<br>
+      Dia: Sábado 21 de Junio<br>
+    Le Esperamos.... <br> clip ver ubicación</p>
+      
+    </div>
+    <div class="carta">
+      <i class="bx bxs-t-shirt"></i>
+    </div>
+  </div>
+
+  <div class="botones">
+    <button class="boton" id="Abrir">Abrir</button>
+
+    <button class="ubicacion-link" id="btnUbicacion">
+        <i class="fa-solid fa-map-location-dot"></i>
+        Ver ubicación
+        <i class="fa-solid fa-map-location-dot"></i>
+      </button>
+
+    <button class="boton" id="Cerrar">Cerrar</button>
+  </div>
+
+  <script>
+  const btnAbrir = document.querySelector("#Abrir");
+  const btnCerrar = document.querySelector("#Cerrar");
+  const btnUbicacion = document.getElementById("btnUbicacion");
+  const contenedor = document.querySelector("#AbrirContenedor");
+
+  const abrirCarta = () => {
+    const ElementoSuperior = document.querySelector(".superior");
+    ElementoSuperior.classList.add("abrir-superior");
+
+    const h1 = document.querySelector("h2");
+    const p = document.querySelector(".psorpresa");
+    h1.style.transform = "translateY(-120px)";
+    p.style.transform = "translateY(-120px)";
+    h1.style.transition = "transform 0.65s ease-in-out";
+    p.style.transition = "transform 0.65s ease-in-out";
+
+    const IconoCorazon = document.querySelector(".bx");
+    IconoCorazon.classList.add("bx-rotada");
+
+    setTimeout(() => {
+      ElementoSuperior.style.zIndex = -1;
+      const ElementoMensaje = document.querySelector(".mensaje");
+      ElementoMensaje.classList.add("abrir-mensaje");
+
+      // Mostrar botón ubicación
+      btnUbicacion.style.display = "inline-block";
+    }, 700);
+  };
+
+  const cerrarCarta = () => {
+    const ElementoSuperior = document.querySelector(".superior");
+    const ElementoMensaje = document.querySelector(".mensaje");
+    ElementoMensaje.classList.remove("abrir-mensaje");
+
+    // Ocultar botón ubicación
+    btnUbicacion.style.display = "none";
+
+    setTimeout(() => {
+      const h1 = document.querySelector("h2");
+      const p = document.querySelector(".psorpresa");
+      h1.style.transform = "translateY(0px)";
+      p.style.transform = "translateY(0px)";
+      ElementoSuperior.style.zIndex = 0;
+      ElementoSuperior.classList.remove("abrir-superior");
+
+      const IconoCorazon = document.querySelector(".bx");
+      IconoCorazon.classList.remove("bx-rotada");
+    }, 700);
+  };
+
+  btnAbrir.addEventListener("click", abrirCarta);
+  btnCerrar.addEventListener("click", cerrarCarta);
+  contenedor.addEventListener("click", abrirCarta);
+
+  // Abrir ubicación en Maps sin propagar evento al contenedor
+  btnUbicacion.addEventListener("click", (e) => {
+    e.stopPropagation();
+    window.open("https://maps.app.goo.gl/tSeaCaQqxhfqsWUy6", "_blank");
+  });
+
+  // Ocultar el botón al inicio
+  btnUbicacion.style.display = "none";
+</script>
+
+</body>
+
+</html>
